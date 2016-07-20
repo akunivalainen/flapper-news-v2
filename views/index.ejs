@@ -43,7 +43,7 @@
           </span>
         </span>
         <span>
-          <a href="#/posts/{{$index}}">Comments</a>
+          <a href="#/posts/{{post._id}}">Comments</a>
         </span>
     </div>
 
@@ -60,7 +60,7 @@
     </form>
 </script>
 
-<!-- inline template /posts -->
+<!-- inline template /posts/ -->
 <script type="text/ng-template" id="/posts.html">
   <div class="page-header">
     <h3>
@@ -72,7 +72,7 @@
       </span>
     </h3>
   </div>
-  <div ng-repeat"comment in post.comment | orderBy: '-upvotes'">
+  <div ng-repeat="comment in post.comments | orderBy: '-upvotes'">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
       {{comment.upvotes}} - by {{comment.author}}
     <span style="font-size: 20px; margin-left: 10px;">
